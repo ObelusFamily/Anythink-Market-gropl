@@ -14,6 +14,10 @@ Docker is needed to run this application. The most recent version of Docker can 
 
 You can verify that Docker has been successfully installed by running `docker -v` and `docker-compose -v` from the terminal.
 
-Once Docker has been installed, clone this repository from Github.
+Once Docker has been installed, this repository must be cloned to your local hard drive. To clone this repository from Github
 
-Next, run `docker-compose up` in the project root folder to verify to start up the front and backend of the Anythink app.
+1. Open the terminal.
+2. Navigate to the folder where this project will be stored. 
+3. In the terminal run the command `git clone git@github.com:ObelusFamily/Anythink-Market-gropl.git`
+
+After the repository has been cloned, `cd` into the root folder of the project and run `docker-compose up`in the terminal to start up the application. 
