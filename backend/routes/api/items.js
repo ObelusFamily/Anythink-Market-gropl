@@ -137,6 +137,18 @@ router.get("/feed", auth.required, function(req, res, next) {
   });
 });
 
+router.get("/:title", auth.optional, function(req, res, next) {
+  Promise.all([
+    req.payload ? User.find(req.payload.title) : null
+  ])
+  .then(function(results) {
+    var user = results[0];
+
+    return res.json({ item: req.item.toJSONFor(user) });
+  })
+  .catch(next);
+});
+
 router.post("/", auth.required, function(req, res, next) {
   User.findById(req.payload.id)
     .then(function(user) {
